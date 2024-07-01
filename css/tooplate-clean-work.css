@@ -1354,11 +1354,11 @@ strong {
 
 .site-footer .logo {
   background-color: var(--white-color);
-  border-radius: var(--border-radius-large);
+  border-radius: var(--border-radius-small);
   width: 1280 px;
-  height: 1044 px;
-  object-fit: cover;
-  padding: 15px;
+  height: 1600 px;
+  object-fit: contain;
+  padding: -10px;
 }
 
 .site-footer-title,
