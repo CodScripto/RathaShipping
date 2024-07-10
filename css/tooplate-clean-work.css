@@ -899,6 +899,31 @@ strong {
   color: var(--white-color);
 }
 
+.banner-section1 {
+  background-image: url('../images/Frieght_forwarder.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+  min-height: 340px;
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+
+.banner-section2 {
+  background-image: url('../images/complete_log.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+  min-height: 34px;
+  padding-top: 200px;
+  padding-bottom: 50px;
+}
+
+
 
 /*---------------------------------------
   COUNTDOWN              
