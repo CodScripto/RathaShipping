@@ -632,7 +632,7 @@ strong {
 }
 
 .navbar-expand-lg .navbar-nav .nav-link {
-  margin: 20px;
+  margin: 50px;
   padding: 0;
 }
 
@@ -1589,7 +1589,7 @@ strong {
   }
 
   .navbar-expand-lg .navbar-nav .nav-link {
-    margin: 8px 20px;
+    margin: 8px 50px;
   }
 
   .navbar-expand-lg .navbar-nav .nav-link.custom-btn {
