@@ -1433,6 +1433,8 @@ strong {
 -----------------------------------------*/
 .footer-menu {
   column-count: 2;
+  display: grid;
+  grid-template-columns: 1fr;
   margin: 0;
   padding: 0;
 }
