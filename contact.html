@@ -35,24 +35,30 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script type="text/javascript">
-        (function() {
+        (function () {
             emailjs.init("06hV3NmyO4b_noYkW"); // Replace with your EmailJS user ID
         })();
 
-        $(document).ready(function() {
-            $("#contactForm").on("submit", function(event) {
+        $(document).ready(function () {
+            $("#contactForm").on("submit", function (event) {
                 event.preventDefault();
 
                 emailjs.sendForm('service_8ftx34a', 'template_vhpbvfq', this)
-                    .then(function(response) {
+                    .then(function (response) {
                         console.log('SUCCESS!', response.status, response.text);
                         alert('Thank you for contacting us! We will get back to you shortly.');
-                    }, function(error) {
+                        $('#contactForm')[0].reset();
+                    }, function (error) {
                         console.log('FAILED...', error);
                         alert('There was an error sending your message. Please try again later.');
                     });
             });
         });
+        function submitForm(event) {
+            event.preventDefault(); 
+            document.getElementById("myForm").reset();
+        }
+            
     </script>
 </head>
 
@@ -70,8 +76,8 @@
 
                     <p class="d-flex d-lg-block d-md-block d-none me-4 mb-0">
                         <i class="bi-clock-fill me-2"></i>
-                        <strong class="me-2">Mon - Fri</strong> 8:30 AM - 6:00 PM
-                        
+                        <strong class="me-2">Mon - Fri</strong> 9:00 AM - 6:30 PM
+
                     </p>
 
                     <p class="site-header-icon-wrap text-white d-flex mb-0 ms-auto">
@@ -115,9 +121,10 @@
                             role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
 
                         <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
-                            <li><a class="dropdown-item" href="services-detail.html">Frieght Management</a></li>
+                            <li><a class="dropdown-item" href="services-detail.html">Freight Management</a></li>
 
-                            <li><a class="dropdown-item" href="Complete Logistic.html">Complete Logistics Solution</a></li>
+                            <li><a class="dropdown-item" href="Complete Logistic.html">Complete Logistics Solution</a>
+                            </li>
 
                             <li><a class="dropdown-item" href="multimodal.html">MultiModal Transport</a></li>
 
@@ -130,8 +137,8 @@
                     </li>
 
                     <li class="nav-item ms-3">
-                        <a class="nav-link custom-btn custom-border-btn custom-btn-bg-white btn" href="#">Get
-                            started</a>
+                        <a class="nav-link custom-btn custom-border-btn custom-btn-bg-white btn"
+                            href="https://fms.rathashipping.com/app/#/" target="_blank">Login</a>
                     </li>
                 </ul>
             </div>
@@ -180,7 +187,7 @@
                             <h5 class="d-flex mt-3 mb-3">
                                 <i class="bi-geo-alt-fill custom-icon me-3"></i>
                                 OFFICE NO 322, A WING, KUKREJA PLAZA, PLOT NO - 46, SECTOR -11,
-                        CBD BELAPUR, NAVI MUMBAI, MUMBAI City, MH 400614 INDIA
+                                CBD BELAPUR, NAVI MUMBAI, MUMBAI City, MH 400614 INDIA
                             </h5>
 
                             <h5 class="d-flex mb-3">
@@ -211,14 +218,13 @@
                             <div class="consulting-form-body">
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6 col-12">
-                                        <input type="text" name="from_name" id="from_name"
-                                            class="form-control" placeholder="Your Name" required>
+                                        <input type="text" name="from_name" id="from_name" class="form-control"
+                                            placeholder="Your Name" required>
                                     </div>
 
                                     <div class="col-lg-6 col-md-6 col-12">
                                         <input type="email" name="volunteer-email" id="volunteer-email"
-                                            pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Email"
-                                            required>
+                                            pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Email" required>
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-12">
@@ -242,7 +248,6 @@
                                     <button type="submit" class="form-control">Submit Request</button>
                                 </div>
                             </div>
-                            <script>document.getElementById("contactForm").reset();</script>
                         </form>
                     </div>
 
@@ -261,50 +266,51 @@
                     </div>
 
                     <ul class="footer-menu d-flex flex-wrap ms-5">
-                        <li class="footer-menu-item"><a href="#" class="footer-menu-link">Home</a></li>
+                        <li class="footer-menu-item"><a href="index.html" class="footer-menu-link">Home</a></li>
 
-                        <li class="footer-menu-item"><a href="#" class="footer-menu-link">services</a></li>
+                        <li class="footer-menu-item"><a href="services-detail.html"
+                                class="footer-menu-link">services</a></li>
 
-                        <li class="footer-menu-item"><a href="#" class="footer-menu-link">About Us</a></li>
+                        <li class="footer-menu-item"><a href="about.html" class="footer-menu-link">About Us</a></li>
 
-                        <li class="footer-menu-item"><a href="#" class="footer-menu-link">Contact Us</a></li>
+                        <li class="footer-menu-item"><a href="contact.html" class="footer-menu-link">Contact Us</a></li>
                     </ul>
                 </div>
 
                 <div class="col-lg-5 col-md-6 col-6 mt-3 mt-lg-0 mt-md-0">
-                        <h5 class="site-footer-title mb-3">Our Services</h5>
-    
-                        <ul class="footer-menu">
-                            <li class="footer-menu-item">
-                                <a href="services-detail.html" class="footer-menu-link">
-                                    <i class="bi-chevron-double-right footer-menu-link-icon me-2"></i>
-                                    Freight Management
-                                </a>
-                            </li>
-    
-                            <li class="footer-menu-item">
-                                <a href="Complete Logistic.html" class="footer-menu-link">
-                                    <i class="bi-chevron-double-right footer-menu-link-icon me-2"></i>
-                                    Complete Logistics
-                                </a>
-                            </li>
-    
-                            <li class="footer-menu-item">
-                                <a href="multimodal.html" class="footer-menu-link">
-                                    <i class="bi-chevron-double-right footer-menu-link-icon me-2"></i>
-                                    MultiModal Transport
-                                </a>
-                            </li>
-    
-                            <li class="footer-menu-item">
-                                <a href="Box-op.html" class="footer-menu-link">
-                                    <i class="bi-chevron-double-right footer-menu-link-icon me-2"></i>
-                                    Nvocc -Box Operation
-                                </a>
-                            </li>
+                    <h5 class="site-footer-title mb-3">Our Services</h5>
 
-                        </ul>
-                    </div>
+                    <ul class="footer-menu">
+                        <li class="footer-menu-item">
+                            <a href="services-detail.html" class="footer-menu-link">
+                                <i class="bi-chevron-double-right footer-menu-link-icon me-2"></i>
+                                Freight Management
+                            </a>
+                        </li>
+
+                        <li class="footer-menu-item">
+                            <a href="Complete Logistic.html" class="footer-menu-link">
+                                <i class="bi-chevron-double-right footer-menu-link-icon me-2"></i>
+                                Complete Logistics
+                            </a>
+                        </li>
+
+                        <li class="footer-menu-item">
+                            <a href="multimodal.html" class="footer-menu-link">
+                                <i class="bi-chevron-double-right footer-menu-link-icon me-2"></i>
+                                MultiModal Transport
+                            </a>
+                        </li>
+
+                        <li class="footer-menu-item">
+                            <a href="Box-op.html" class="footer-menu-link">
+                                <i class="bi-chevron-double-right footer-menu-link-icon me-2"></i>
+                                Nvocc -Box Operation
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
 
                 <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0 mb-md-0">
                     <h5 class="site-footer-title mb-3">Office</h5>
@@ -364,7 +370,7 @@
 
                         <strong class="d-block text-white mb-1">Mon - Fri</strong>
 
-                        <p class="text-white mb-3">9:00 AM - 5:30 PM</p>
+                        <p class="text-white mb-3">9:00 AM - 6:30 PM</p>
                     </div>
                 </div>
             </div>
@@ -374,9 +380,9 @@
             <div class="container">
                 <div class="row">
 
-                    <div class="col-lg-6 col-12">
-                        <p class="copyright-text mb-0">Copyright © Developed by <a
-                                href="https://codscripto.in/">CodScripto</a> </p>
+                    <div>
+                        <p class="copyright-text mb-0">Copyright © Developed by <a href="https://codscripto.in/"
+                                target="_blank">CodScripto</a> </p>
                     </div>
 
                 </div>
